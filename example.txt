@@ -1,0 +1,120 @@
+
+	
+	
+/////////////////////////////////
+///// same example in code /////
+
+var allTables = [
+	//SERIES - table 1
+	{
+		'tableName': 'SERIES',	  
+		'options': [
+			//option 1: '75 PLASTIC'
+			{
+				'key': '75 PLASTIC',
+				'cat': 'S75',
+				'filters':[							// what options are viable in other tables when choosing '75 PLASTIC':
+					[  ],							// table 1: all 
+					[ 1, 2 ],						// table 2: can choose from options: 1,2
+					[ 1, 2, 3, 4, 5, 6, 7, 8 ],		// table 3: can choose from options: 1,2,...8
+					[ 1],							// table 4: can choose from options: 1
+					[  ],							// ???   1-2(c1-6), 1-3(c7), 3(c8)
+					[ 1, 2, 3, 4, 5, 6, 7 ],
+					[  ],							// ??? 1(f5-7)
+				]
+			},
+			//option 2:  
+			{
+				'key': '75PL+THROTTLE',
+				'cat': 'S75T',
+				'filters':[
+					[  ],							
+					[ 1, 2 ],						
+					[ 1, 2, 3, 4, 5, 6, 7, 8 ],		
+					[ 1],							
+					[ ],							// ???  1-2(c1-6), 1-3(c7), 3(c8)
+					[ 1, 2, 3, 4, 5, 6, 7 ],
+					[  ],							// ??? 1(f5-7)
+					[  ],
+				]
+			},
+			//option 3:  
+			{
+				'key': '80 PLASTIC',
+				'cat': 'S80',
+				'filters':[
+					[  ],
+					[ 1 ],
+					[ 3,4,7,8 ],
+					[ 1 ],
+					[  ],							// ??? 1-2(c3-4), 1-3(c7), 3(c8)
+					[ 1, 2, 3, 4, 5, 6, 7, 8],
+					[ ],							// ??? 1(f5-8)
+				]
+			},
+			//option 4:
+			{
+				'key': '80PL+THROTTLE',
+				'cat': 'S80T',
+				'filters':[
+					[  ],
+					[ 1 ],
+					[ 3,4 ],
+					[ 1,2 ],
+					[ 1, 2 ],
+					[ 1, 2, 3, 4, 5, 6, 7 ],
+					[  ],					// ??? 1(f5-7)
+				]
+			}
+			//option 5:
+			{
+				'key': '80 "T" ONE CHAMBER',
+				'cat': 'S80V',
+				'filters':[
+					[  ],
+					[ 1 ],
+					[ 7 ],
+					[ 1 ],
+					[ 3 ],
+					[ 1, 2, 3, 4, 5, 6, 7 ],
+					[  ],					// ??? 1(f5-7)
+				]
+			},
+			//option 6:
+			{
+				'key': '80 "T" ONE CHAMBER',
+				'cat': 'S80V',
+				'filters':[
+					[  ],
+					[ 1 ],
+					[ 7, 8 ],
+					[ 1 ],
+					[ 3 ],
+					[  ],					// ??? 1-3(c7), 3(c8)
+					[ 1, 2, 3, 4, 5, 6, 7 ],
+					[  ],					// ??? 1(f5-7)
+				]
+			},
+			//option 7:
+			{
+				'key': '95 PVC THREADED',
+				'cat': 'S95',
+				'filters':[
+					[  ],
+					[ 3 ],
+					[ 7, 9, 10, 11, 12, 14 ],
+					[ 1 ],
+					[  ],					// ??? 1-2(c7), 11(c9-12, 14)
+					[ 1, 2, 3, 4, 5, 6, 7 ],					
+					[  ],					// ??? 1(f5-7)
+					[  ],
+				]
+			}
+		],
+	},
+
+	//table 2
+	{
+		....
+	}
+];
